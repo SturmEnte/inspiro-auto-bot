@@ -1,0 +1,6 @@
+You need to create a file with the name "config.json".
+The content in it should look like this: 
+
+{
+    "webhook": "https://discord.com/api/webhooks/{your webhook id}}/{your webhook token}"
+}
