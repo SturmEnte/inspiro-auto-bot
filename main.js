@@ -1,6 +1,7 @@
+require('dotenv').config();
 const fetch = require('node-fetch').default;
 
-const CONFIG = require('./config.json');
+const CONFIG = process.env;
 const API_ENDPOINT = 'https://inspirobot.me/api?generate=true';
 
 function sendPoem() {
@@ -11,7 +12,7 @@ function sendPoem() {
             res.text()
                 .then((url) => {
                     // Sends the image to the webhook which sends it into the channel
-                    fetch(CONFIG.webhook, {
+                    fetch(CONFIG.WEBHOOK, {
                         method: 'post',
                         body: JSON.stringify({
                             content: url,
